@@ -14,21 +14,21 @@ import {
 const page = () => {
     return (
         <div className='h-screen w-full flex justify-center items-center bg-black'>
-            <div className='w-3/4 h-3/4'>
+            <div className='w-3/4 h-[50vh]'>
                 <Canvas
                     camera={{
-                        fov: 20,
+                        fov: 24,
                         near: 0.1,
                         far: 1000,
                         position: [0, 80, 120],
                     }}>
-                    <OrbitControls />
+                    <OrbitControls enableZoom={false} />
                     <ambientLight intensity={4} />
                     <directionalLight position={[-2, 3, 0]} intensity={5} />
-                    <Panther position-y={-2} scale={9} position-x={6} />
-                    <Man position-y={-2} />
-                    <mesh rotation={[-Math.PI * 0.5, 0, 0]} position-y={-2.5}>
-                        <planeGeometry args={[70, 50]} />
+                    <Panther position-y={-22} scale={30} position-x={12} />
+                    <Man position-y={-22} scale={2.5} />
+                    <mesh rotation={[-Math.PI * 0.5, 0, 0]} position-y={-24}>
+                        <planeGeometry args={[120, 70]} />
                         <MeshReflectorMaterial color={"#7E6C54"} />
                     </mesh>
                     <Environment background preset='forest' />
@@ -37,7 +37,7 @@ const page = () => {
                             font='/fonts/gt.json'
                             // scale={[-1, 1, 1]}
 
-                            position={[-9, 20, 0]}
+                            position={[-9, 23, 0]}
                             curveSegments={24}
                             brevelSegments={1}
                             bevelEnabled
